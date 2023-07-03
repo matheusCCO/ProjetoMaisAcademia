@@ -24,16 +24,20 @@ df.to_csv('arquivo_execel.csv',index=False)
 
 
 #nome = str(input("Entro com o Nome: "))
-dataMatricula = datetime.now()
+#dataMatricula = datetime.today()
+dataMatricula = str(input("Digite a data: "))
 periodo = int(input("entre com o periodo contratado:"))
 #tele = str(input("Telefone:"))
 
 #matricula = random.randrange(1, 99999)
-dataFutura = dataMatricula + relativedelta(months = periodo)
+
+data = datetime.strptime(dataMatricula, "%d/%m/%Y")
+data_sem_hora = data.date()
+dataFutura = data_sem_hora + relativedelta(months = periodo)
 
 #print("Nome: " + nome)
-print("Data Matricula: " + dataMatricula.strftime('%d/%m/%Y'))
-print("Data de vencimanto: " + dataFutura.strftime('%d/%m/%Y'))
+print("Data Matricula: ", dataMatricula)
+print("Data de vencimanto: ", dataFutura.strftime('%d/%m/%Y'))
 #print("Telefone: " + tele)
     
 
