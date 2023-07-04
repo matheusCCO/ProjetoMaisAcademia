@@ -2,7 +2,7 @@ import os.path
 import pandas as pd
 
 
-def adicionaDados(nome, dataMatricula, periodo, tele, vencioneto):
+def adicionaDados(nome, dataMatricula, periodo, tele, vencioneto,status):
     arquivoCsv = 'arquivo_execel.csv'
 
     if os.path.isfile(arquivoCsv):
@@ -21,6 +21,10 @@ def adicionaDados(nome, dataMatricula, periodo, tele, vencioneto):
         'Data de Matricula':[dataMatricula],
         'Periodo de contrato(em meses)':[periodo],
         'Vencimento':[vencioneto],
-        'Status':[],
+        'Status':[status],
         'Telefone':[tele]
     })
+
+    df = pd.concat([df,novoDados], ignore_index=True)
+    df.to_csv(arquivoCsv, index=False)
+    print("Os dados foram adicionados à planilha com sucesso.")
