@@ -2,29 +2,23 @@ import os.path
 import pandas as pd
 
 
-def adicionaDados(nome, dataMatricula, periodo, tele, vencioneto,status):
-    arquivoCsv = 'arquivo_execel.csv'
+def adicionaDados(nome, dataMatricula, periodo, tele, vencioneto, status):
+    nome_arquivo = 'planilha.csv'
 
-    if os.path.isfile(arquivoCsv):
-        df = pd.read_csv(arquivoCsv)
+    # Verificar se o arquivo CSV já existe
+    if os.path.isfile(nome_arquivo):
+        # O arquivo já existe, carregar o DataFrame existente
+        df = pd.read_csv(nome_arquivo)
     else:
-        df = pd.DataFrame(
-            columns=['Nome',
-                     'Data de Matricula',
-                     'Periodo de contrato(em meses)',
-                     'Vencimento',
-                     'Status',
-                     'Telefone']
-        )
-    novoDados = pd.DataFrame({
-        'Nome':[nome],
-        'Data de Matricula':[dataMatricula],
-        'Periodo de contrato(em meses)':[periodo],
-        'Vencimento':[vencioneto],
-        'Status':[status],
-        'Telefone':[tele]
-    })
+        # O arquivo não existe, criar um DataFrame vazio
+        df = pd.DataFrame(columns=['Matricula', 'Nome', 'Data de Matricula', 'Periodo de contrato(em meses)', 'Vencimento', 'Status', 'Telefone'])
 
-    df = pd.concat([df,novoDados], ignore_index=True)
-    df.to_csv(arquivoCsv, index=False)
-    print("Os dados foram adicionados à planilha com sucesso.")
+    # Ler os dados do teclado e adicionar ao DataFrame
+    
+    dados = pd.DataFrame([[ nome, dataMatricula, periodo, vencioneto, status, tele]], columns=df.columns)
+    df = pd.concat([df, dados], ignore_index=True)
+
+    # Salvar o DataFrame como um arquivo CSV
+    df.to_csv(nome_arquivo, index=False)
+
+    print(f'O arquivo "{nome_arquivo}" foi atualizado com sucesso.')
