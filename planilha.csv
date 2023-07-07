@@ -1,3 +1,8 @@
-Matricula,Nome,Data de Matricula,Periodo de contrato(em meses),Vencimento,Status,Telefone
-1,matheus,06/07/2023,1,06/08/2023,dentro do contrato,9 9999-9999
-2,ana,06/08/2023,1,06/09/2023,dentro do contrato,9 9999-9999
+Matricula,Nome,Idade,Ultimo Pagamento ,Periodo de contrato(em meses),Vencimento,Status,Telefone
+1255962456,Matheus,28,2023-07-07,3,2023-10-07,Dentro do Contrato,9 9999-9999
+916715774,Ana,17,2023-07-07,1,2023-08-07,Dentro do Contrato,9 9999-9999
+887856304,Maicon,65,2023-07-07,12,2024-07-07,Dentro do Contrato,9 9999-9999
+638912578,Bruna,28,2023-07-07,6,2024-01-07,Dentro do Contrato,9 9999-9999
+775130970,Elizandro,45,2023-07-07,12,2024-07-07,Dentro do Contrato,9 9999-9999
+1426438186,Liliane,13,2023-07-07,3,2023-10-07,Dentro do Contrato,9 9999-9999
+480773647,Andresa,20,2023-07-07,1,2023-08-07,Dentro do Contrato,9 9999-9999

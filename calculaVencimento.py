@@ -2,14 +2,14 @@ import datetime
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
 
-def calculaVencimento(dataMatricula, periodo):
-    dataFutura = dataMatricula + relativedelta(months = periodo)
-    return dataFutura
+def calculaVencimento(ultimoPagamento, periodo):
+    ultimoPagamento = ultimoPagamento + relativedelta(months = periodo)
+    return ultimoPagamento
 
 def calcultaStatus(vencioneto):
     data_atual = datetime.today()
     data_atual = data_atual.date()
-    print("Vencimento calculaStatus: ", vencioneto)
+    print("Vencimento: ", vencioneto)
     if data_atual > vencioneto:
         status = "Matricula Vancida"
     if data_atual <= vencioneto:
