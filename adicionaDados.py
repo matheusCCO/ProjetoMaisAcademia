@@ -1,7 +1,7 @@
 import os.path
 import pandas as pd
 
-from menu import menu
+#from menu import menu
 
 
 def adicionaDados(matricula,nome,idade, ultimoPagamento, periodo, tele, vencioneto, status):
@@ -24,4 +24,4 @@ def adicionaDados(matricula,nome,idade, ultimoPagamento, periodo, tele, vencione
     df.to_csv(nome_arquivo, index=False)
 
     print(f'O arquivo "{nome_arquivo}" foi atualizado com sucesso.')
-    menu()
+    #menu()

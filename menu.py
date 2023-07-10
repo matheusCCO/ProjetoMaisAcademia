@@ -1,8 +1,10 @@
-1
+
 from adicionaDados import adicionaDados
 from confimaPagamento import confirmaPagamento
 from leDados import lerDados
 from mostraDados import mostraDados
+
+
 
 def menu():
     while True:
@@ -23,6 +25,5 @@ def menu():
             confirmaPagamento()
         elif opcao == 0:
             break
-
 
 menu()
